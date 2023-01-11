@@ -8,3 +8,7 @@ Na pasta do react coloca como devDependence o nome do package do tokens com um *
 
 ##Criando storybook
 - npx sb init --builder @storybook/builder-vite --type react
+
+SUBIR PARA O NPM
+-yarn changeset
+-yarn version-packages
