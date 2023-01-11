@@ -23,7 +23,7 @@ jobs:
       - name: Build Storybook
         run: yarn build
         env:
-          TURBO_TOKEN: SjTnq5AhNI0EXPAcuFcI3j3T
+          TURBO_TOKEN: ${{ secrets.VERCEL_TOKEN }}
           TURBO_TEAM: loressl
 
 
