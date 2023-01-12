@@ -23,6 +23,7 @@ export const TooltipContent = styled(Tooltip.Content, {
     padding: '0.75rem 1rem',
     borderRadius: '$xs',
     gap: '$2',
+    fontFamily: '$default'
 })
 
 export const TooltipArrow = styled(Tooltip.Arrow, {

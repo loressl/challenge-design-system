@@ -1,5 +1,11 @@
 # @lsslima-ignite-ui/react
 
+## 4.0.0
+
+### Major Changes
+
+- Add componente toast
+
 ## 3.0.0
 
 ### Major Changes

@@ -11,11 +11,11 @@ export default {
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
-                    padding: '0.75rem',
+                    padding: '0.5rem',
                     width: '30px',
                     height: '30px',
                     background: 'green',
-                    borderRadius: '6px'
+                    borderRadius: '6px',
                 }}>
                     <span style={{
                         color: '#ffffff',
@@ -23,8 +23,18 @@ export default {
                     }}>20</span>
                 </div>
             ),
-        text: '26 de Outubro - Disponível'
+        text: '26 de Outubro - Disponível',
+        side: 'right',
+        sideOffset: 5
     },
+    argTypes: {
+        side: {
+            options: ['right', 'top', 'bottom', 'left'],
+            control: {
+                type: 'inline-radio'
+            }
+        }
+    }
 } as Meta<TooltipProps>
 
 export const Primary: StoryObj<TooltipProps> = {}
