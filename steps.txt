@@ -12,3 +12,6 @@ Na pasta do react coloca como devDependence o nome do package do tokens com um *
 SUBIR PARA O NPM
 -yarn changeset
 -yarn version-packages
+
+OBS:
+-Após teminar o desenvolvimento, deve fazer os dois passos anteriores e depois o commit e push, não precisa fazer o release em seguida por está no workflow.
