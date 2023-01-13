@@ -1,0 +1,2 @@
+import{A as t}from"./index-9940e993.js";import"./index-34e51894.js";import"./es.object.get-own-property-descriptor-64192e07.js";import"./jsx-runtime-da4cfb3b.js";import"./index-75cd1920.js";const p={title:"Data display/Avatar",component:t,args:{src:"https://github.com/loressl.png",alt:"Lorena Lima"},argTypes:{src:{control:{type:"text"}}}},c={},e={args:{src:void 0}},m=["Primary","WithFallback"];export{c as Primary,e as WithFallback,m as __namedExportsOrder,p as default};
+//# sourceMappingURL=Avatar.stories-fe20ee50.js.map
