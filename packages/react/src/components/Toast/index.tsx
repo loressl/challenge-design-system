@@ -1,41 +1,39 @@
-import { HeaderContainer, ToastClose, ToastDescription, ToastProvider, ToastRoot, ToastTitle, ToastViewPort } from "./styles";
-import { ReactNode } from "react";
+import { ToastHeaderContainer, ToastWrapper, ToastTitle, ToastClose, ToastDescription } from "./styles";
+import { Toaster, toast } from 'react-hot-toast'
+import { ComponentProps } from "react";
+import { X } from 'phosphor-react'
 
-export type DirectionToast = 'right' | 'left' | 'up' | 'down'
-
-export interface ToastProps {
-    title: string
-    text: ReactNode
+export interface ToastProps extends ComponentProps<typeof Toaster> {
     show: boolean
-    onClose: () => void
-    direction?: DirectionToast
-    duration?: number
+    title: string
+    message: string
+    duration: number
 }
 
 export function Toast({
     title,
-    text,
+    message,
     show,
-    onClose,
-    direction= 'down',
-    duration = 5000
-}:ToastProps) {
-    return(
-        <ToastProvider swipeDirection={direction} duration={duration}>
-            <ToastRoot open={show} onOpenChange={onClose}>
-                <HeaderContainer>
-                    <ToastTitle>{title}</ToastTitle>
-                    <ToastClose>
-                        X
-                    </ToastClose>
-                </HeaderContainer>
-                <ToastDescription asChild>
-                    {text}
-                </ToastDescription>
-            </ToastRoot>
-            <ToastViewPort />
-        </ToastProvider>
+    duration,
+    ...props
+}: ToastProps) {
+    show && toast.custom((t) => (
+        <ToastWrapper>
+            <ToastHeaderContainer>
+                <ToastTitle>{title}</ToastTitle>
+                <ToastClose onClick={() => toast.dismiss(t.id)}>
+                    <X size={20} />
+                </ToastClose>
+            </ToastHeaderContainer>
+            <ToastDescription>{message}</ToastDescription>
+        </ToastWrapper>
+    ),
+        {
+            duration
+        }
     )
+
+    return  <Toaster {...props} />
 }
 
-Toast.displayName= 'Toast'
+Toast.displayName = 'Toast'

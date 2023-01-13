@@ -5,30 +5,45 @@ export default {
     title: 'Data display/Tooltip',
     component: Tooltip,
     args: {
-        children:
-            (
-                <div style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    padding: '0.5rem',
-                    width: '30px',
-                    height: '30px',
-                    background: 'green',
-                    borderRadius: '6px',
-                }}>
-                    <span style={{
-                        color: '#ffffff',
-                        fontSize: '1rem',
-                    }}>20</span>
-                </div>
-            ),
-        text: '26 de Outubro - Disponível',
-        side: 'right',
-        sideOffset: 5
+        content: '26 de Outubro - Disponível',
+        anchorId: 'date',
     },
+    decorators: [
+        (Story) => {
+            return (
+                <div
+                    style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        height: '50vh',
+                    }}
+                >
+                    <div
+                        id="date"
+                        style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            padding: '0.5rem',
+                            width: '30px',
+                            height: '30px',
+                            background: 'green',
+                            borderRadius: '6px',
+                        }}
+                    >
+                        {Story()}
+                        <span style={{
+                            color: '#ffffff',
+                            fontSize: '1rem',
+                        }}>26</span>
+                    </div>
+                </div>
+            )
+        }
+    ],
     argTypes: {
-        side: {
+        place: {
             options: ['right', 'top', 'bottom', 'left'],
             control: {
                 type: 'inline-radio'

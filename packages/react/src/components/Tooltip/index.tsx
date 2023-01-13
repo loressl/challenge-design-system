@@ -1,36 +1,15 @@
-import {ReactNode} from 'react'
-import { TooltipProvider, TootipRoot, TooltipTrigger, TooltipPortal, TooltipContent, TooltipArrow } from "./styles";
+import { ComponentProps } from 'react'
+import { TooltipWrapper } from "./styles";
 
-export type SideTooltip = 'top' | 'right' | 'bottom' | 'left'
+import 'react-tooltip/dist/react-tooltip.css';
 
-export interface TooltipProps {
-    children: ReactNode
-    text: string
-    side?: SideTooltip
-    sideOffset?: number
-}
+export interface TooltipProps extends ComponentProps<typeof TooltipWrapper> {}
 
 export function Tooltip({
-    children,
-    text,
-    side = 'bottom',
-    sideOffset = 5
+   ...props
 }: TooltipProps) {
     return(
-        <TooltipProvider>
-            <TootipRoot>
-                <TooltipTrigger asChild>
-                    {children}
-                </TooltipTrigger>
-
-                <TooltipPortal>
-                    <TooltipContent sideOffset={sideOffset} side={side}>
-                        {text}
-                        <TooltipArrow />
-                    </TooltipContent>
-                </TooltipPortal>
-            </TootipRoot>
-        </TooltipProvider>
+        <TooltipWrapper {...props}/>
     )
 }
 

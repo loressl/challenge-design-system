@@ -5,23 +5,20 @@ export default {
     title: 'Data display/Toast',
     component: Toast,
     args: {
-        show: true,
+        position: 'top-center',
         title: 'Agendamento realizado',
-        text: <span>Quarta-feira, 23 de Outubro às 16h</span>,
-        direction: 'up',
-        duration: 10000
+        message: 'Quarta-feira, 23 de Outubro às 16h',
+        show: true,
+        duration: 99999,
+        reverseOrder: false
     },
     argTypes: {
-        direction: {
-            options: ['right', 'up', 'down', 'left'],
+        position: {
+            options: ['top-left' , 'top-right' , 'top-center' , 'bottom-left' , 'bottom-right' , 'bottom-center'],
             control: {
                 type: 'inline-radio'
             }
         },
-        onClose: {
-            action: 'onClose',
-            table: { disable: true}
-        }
     }
 } as Meta<ToastProps>
 

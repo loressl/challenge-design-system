@@ -1,5 +1,11 @@
 # @lsslima-ignite-ui/react
 
+## 5.0.0
+
+### Major Changes
+
+- Update components of toast and tooltip
+
 ## 4.0.0
 
 ### Major Changes
